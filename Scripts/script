@@ -1,0 +1,5 @@
+
+avr-gcc -g -Os -mmcu=atmega162 -c led.c
+avr-gcc -g -mmcu=atmega162 -o led.elf led.o
+avr-objcopy -j .text -j .data -O ihex led.elf led.hex
+avr-size --format=avr --mcu=atmega162 led.elf 
